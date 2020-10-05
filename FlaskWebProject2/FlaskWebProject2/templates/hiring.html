@@ -1,0 +1,31 @@
+﻿<div class="container">
+    <div id="hiring">
+        <table class="table" data-show-toggle="false" data-paging="true">
+            <thead>
+                <tr>
+                    <th data-breakpoints="sm">First Name</th>
+                    <th>Last Name</th>
+                    <th>Email ID</th>
+                    <th data-breakpoints="sm">Contact Number</th>
+                    <th data-breakpoints="all" data-title="Visa">Visa Status</th>
+                    <th data-breakpoints="all" data-title="Colllege1">College Name 1</th>
+                    <th data-breakpoints="all" data-title="College2">College Name 2</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<script>
+    jQuery(function ($) {
+        $('.table').footable({
+            "columns": $.get('columns.json'),
+            "rows": $.get('rows.json')
+        });
+    });
+</script>
+<div id="hiringForm">
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#hiring_candidateModal" value="reset">
+        Add Candidate
+    </button>
+</div>
+{% include 'hiringForm.html' %}
